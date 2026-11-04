@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7fb" />
+    <meta name="description" content="A clear, student-first workspace for tracking campus placements." />
+    <title>Orbit — Placement Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="scripts/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="Orbit home" data-page="dashboard">
+          <span class="brand-mark"><span></span><span></span><span></span><span></span></span>
+          <span>orbit<span class="brand-period">.</span></span>
+        </a>
+        <div class="workspace-label">WORKSPACE</div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-link active" data-page="dashboard"><span class="nav-icon">⌂</span>Overview</button>
+          <button class="nav-link" data-page="jobs"><span class="nav-icon">▤</span>Explore jobs<span class="nav-count" id="job-nav-count">0</span></button>
+          <button class="nav-link" data-page="applications"><span class="nav-icon">◷</span>Applications</button>
+          <button class="nav-link" data-page="interviews"><span class="nav-icon">▦</span>Interviews</button>
+          <button class="nav-link" data-page="resumes"><span class="nav-icon">▧</span>My resumes</button>
+        </nav>
+        <div class="nav-divider"></div>
+        <div class="workspace-label">MANAGE</div>
+        <nav class="main-nav" aria-label="Management navigation">
+          <button class="nav-link" data-page="admin"><span class="nav-icon">◫</span>Admin dashboard</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="help-card">
+            <div class="help-spark">✳</div>
+            <strong>Need a hand?</strong>
+            <p>Your next opportunity is closer than you think.</p>
+            <button class="help-link" data-page="jobs">Explore opportunities <span>↗</span></button>
+          </div>
+          <button class="profile-switch" id="profile-switch" aria-label="Switch profile mode">
+            <span class="avatar avatar-user">AS</span>
+            <span class="profile-copy"><strong id="sidebar-name">Aarav Sharma</strong><small id="sidebar-role">Student account</small></span>
+            <span class="profile-more">···</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button class="icon-button mobile-menu" id="mobile-menu" aria-label="Open navigation">☰</button>
+          <div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong id="page-crumb">Overview</strong></div>
+          <div class="topbar-actions">
+            <label class="search-box"><span>⌕</span><input id="global-search" type="search" placeholder="Search opportunities..." aria-label="Search opportunities" /><kbd>⌘ K</kbd></label>
+            <button class="icon-button notification-button" aria-label="Notifications">♧<i></i></button>
+            <span class="topbar-divider"></span>
+            <button class="top-avatar" aria-label="Open profile">AS</button>
+          </div>
+        </header>
+        <div id="view-root" class="view-root" aria-live="polite"></div>
+      </main>
+    </div>
+    <div class="toast-region" id="toast-region" aria-live="polite"></div>
+    <dialog class="app-dialog" id="app-dialog">
+      <form method="dialog" class="dialog-close-form"><button class="dialog-close" aria-label="Close dialog">×</button></form>
+      <div id="dialog-content"></div>
+    </dialog>
+  </body>
+</html>
